@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Вход{% endblock %}
+{% block content %}
+    <h1>Вход</h1>
+    <form action="{{ url_for('login') }}" method="post"> <!-- метод пост для отправки формы -->
+        {{ form.hidden_tag() }} <!-- скрытое поле для отправки формы  -->
+        <div>
+            {{ form.email.label }} 
+            {{ form.email(size=32) }}
+        </div>
+        <div>
+            {{ form.password.label }} 
+            {{ form.password(size=32) }}
+        </div>
+        <div>
+            {{ form.remember() }}
+            {{ form.remember.label }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+{% endblock %}

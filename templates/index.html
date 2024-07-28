@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <form method="post">
+
+       {{ form.hidden_tag() }}
+       <p>
+       {{ form.name.label }}<br>  <!-- Change form.user.label to form.name.label -->
+       {{ form.name(size=32) }}<br>  <!-- Change form.user(size=32) to form.name(size=32) -->
+       {% for error in form.name.errors %}  <!-- Change form.user.errors to form.name.errors -->
+          <span style="color: red;">[{{ error }}]</span>
+       {% endfor %}
+       </p>
+       <br>
+       <p>{{ form.submit() }}</p>
+
+   </form>
+</body>
+</html>
